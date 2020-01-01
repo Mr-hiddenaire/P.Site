@@ -1,0 +1,7 @@
+install/*
+store/*
+.idea/*
+cache/*
+config.php
+api_config.php
+files/*
