@@ -34,9 +34,15 @@ class add extends command
 		parent::__construct($this->user);
 	}
 
-	private function init($type)
+	private function init()
 	{
 	    global $apiConfig;
+	    
+	    $keyArr = array_keys($apiConfig['forum_content']);
+	    
+	    $key = array_rand(array_keys($apiConfig['forum_content']));
+	    
+	    $type = $keyArr[$key];
 	    
 	    $this->_fType = $type;
 	    
@@ -49,16 +55,16 @@ class add extends command
 	
 	protected function configure()
 	{
-	    $this->addArgument('type', InputArgument::REQUIRED, 'Please input an input');
+	    //$this->addArgument('type', InputArgument::REQUIRED, 'Please input an input');
 	    
 		$this->setName('post:add');
 	}
 
 	protected function execute(InputInterface $input, OutputInterface $output)
 	{
-	    $type = $input->getArgument('type');
+	    //$type = $input->getArgument('type');
 	    
-	    $this->init($type);
+	    $this->init();
 	    
 	    $this->doPost();
 	}
