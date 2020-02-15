@@ -77,7 +77,6 @@ class add extends command
 	    
 	    if ($data) {
 	        foreach ($data as $val) {
-	            var_dump($val);exit;
 	            $message = '<iframe width="100%" height="500" src="'.$apiConfig['v_url'].'/v/'.$val['video_url'].'" frameborder="0" allowfullscreen></iframe>';
 	            $title = ''.$val['name'].'';
 	            $username = 'Uploader';
@@ -116,8 +115,36 @@ class add extends command
 	                    'topic_thumb' => ''.$val['thumb_url'].'',
 	                ]
 	            );
+	            
+	            // to set sync status in order to avoid insert data duplicatly
+	            $this->setSyncStatus($val['id']);
 	        }
 	    }
+	}
+	
+	private function setSyncStatus($id)
+	{
+	    $result = [];
+	    
+	    global $apiConfig;
+	    
+	    $client = new Client();
+	    
+	    $response = $client->post($apiConfig['service_upstream_url'].DIRECTORY_SEPARATOR.'api/setSyncStatus', [
+	        'body' => [
+	            'id' => $id,
+	        ],
+	    ]);
+	    
+	    $res = json_decode($response->getBody(), true);
+	    
+	    if (isset($res['retcode']) && $res['retcode'] == 200) {
+	        if (isset($res['data']) && $res['data']) {
+	            $result = $res['data'];
+	        }
+	    }
+	    
+	    return $result;
 	}
 	
 	private function getShoudSyncData()
