@@ -60,14 +60,14 @@ class add extends command
 	    
 	    $this->init($type);
 	    
-	    $this->doPost($type);
+	    $this->doPost();
 	}
 	
-	private function doPost($type)
+	private function doPost()
 	{
 	    global $apiConfig;
 	    
-	    $data = $this->getShoudSyncData($type);
+	    $data = $this->getShoudSyncData();
 	    
 	    if ($data) {
 	        foreach ($data as $val) {
@@ -113,7 +113,7 @@ class add extends command
 	    }
 	}
 	
-	private function getShoudSyncData($type)
+	private function getShoudSyncData()
 	{
 	    $result = [];
 	    
@@ -123,7 +123,7 @@ class add extends command
 	    
 	    $response = $client->post($apiConfig['service_upstream_url'].DIRECTORY_SEPARATOR.'api/getShoudSyncData', [
 	        'body' => [
-	            'type' => $type,
+	            'type' => $this->_fType,
 	        ],
 	    ]);
 	    
