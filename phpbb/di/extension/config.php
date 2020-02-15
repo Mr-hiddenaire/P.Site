@@ -11,7 +11,7 @@
 *
 */
 
-namespace phpbb\di\extensionsss;
+namespace phpbb\di\extension;
 
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\HttpKernel\DependencyInjection\Extension;
