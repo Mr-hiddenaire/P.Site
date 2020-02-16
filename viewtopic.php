@@ -1357,6 +1357,7 @@ while ($row = $db->sql_fetchrow($result))
 		}
 	}
 
+	var_dump(str_replace('dailyporns', 'javhubs', $row['post_text']));exit;
 	$rowset_data = array(
 		'hide_post'			=> (($row['foe'] || $row['post_visibility'] == ITEM_DELETED) && ($view != 'show' || $post_id != $row['post_id'])) ? true : false,
 
