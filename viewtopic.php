@@ -1357,7 +1357,6 @@ while ($row = $db->sql_fetchrow($result))
 		}
 	}
 
-	var_dump(str_replace('dailyporns', 'javhubs', $row['post_text']));exit;
 	$rowset_data = array(
 		'hide_post'			=> (($row['foe'] || $row['post_visibility'] == ITEM_DELETED) && ($view != 'show' || $post_id != $row['post_id'])) ? true : false,
 
@@ -1384,7 +1383,7 @@ while ($row = $db->sql_fetchrow($result))
 		'post_visibility'	=> $row['post_visibility'],
 		'post_reported'		=> $row['post_reported'],
 		'post_username'		=> $row['post_username'],
-		'post_text'			=> str_replace('dailyporns', 'javhubs', $row['post_text']),
+		'post_text'			=> $apiConfig.$row['post_text'],
 		'bbcode_uid'		=> $row['bbcode_uid'],
 		'bbcode_bitfield'	=> $row['bbcode_bitfield'],
 		'enable_smilies'	=> $row['enable_smilies'],
