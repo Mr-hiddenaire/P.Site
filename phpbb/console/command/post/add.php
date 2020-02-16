@@ -77,7 +77,7 @@ class add extends command
 	    
 	    if ($data) {
 	        foreach ($data as $val) {
-	            $message = '<iframe width="100%" height="500" src="'.$apiConfig['v_url'].'/v/'.$val['video_url'].'" frameborder="0" allowfullscreen></iframe>';
+	            $message = '<iframe width="100%" height="500" src="/v/'.$val['video_url'].'" frameborder="0" allowfullscreen></iframe>';
 	            $title = ''.$val['name'].'';
 	            $username = 'Uploader';
 	            
