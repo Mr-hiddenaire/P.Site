@@ -8,11 +8,13 @@ use phpbb\language\language;
 use phpbb\user;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
-use Symfony\Component\Console\Input\InputArgument;
+#use Symfony\Component\Console\Input\InputArgument;
 use GuzzleHttp\Client;
 
 class add extends command
 {
+    const IS_AISA = 1;
+    
 	protected $db;
 	
 	protected $user;
@@ -78,7 +80,13 @@ class add extends command
 	    if ($data) {
 	        foreach ($data as $val) {
 	            $message = '<iframe width="100%" height="500" src="/v/'.$val['video_url'].'" frameborder="0" allowfullscreen></iframe>';
-	            $title = ''.$val['name'].'';
+	            
+	            if ($val['type'] == self::IS_AISA) {
+	               $title = ''.$val['name'].' - '.$val['tags'];
+	            } else {
+	                $title = ''.$val['name'].'';
+	            }
+	            
 	            $username = 'Uploader';
 	            
 	            submit_post('post', $title, $username, POST_NORMAL,
