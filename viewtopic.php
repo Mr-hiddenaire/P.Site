@@ -1383,6 +1383,8 @@ while ($row = $db->sql_fetchrow($result))
 		'post_visibility'	=> $row['post_visibility'],
 		'post_reported'		=> $row['post_reported'],
 		'post_username'		=> $row['post_username'],
+	    
+		// to fixed video url for iframe html render
 		'post_text'			=> str_replace('src="/v/', 'src="'.$apiConfig['v_url'].'/v/', $row['post_text']),
 		'bbcode_uid'		=> $row['bbcode_uid'],
 		'bbcode_bitfield'	=> $row['bbcode_bitfield'],

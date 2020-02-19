@@ -19,6 +19,9 @@ $phpbb_root_path = (defined('PHPBB_ROOT_PATH')) ? PHPBB_ROOT_PATH : './';
 $phpEx = substr(strrchr(__FILE__, '.'), 1);
 include($phpbb_root_path . 'common.' . $phpEx);
 
+### Load customized configuration ###
+include($phpbb_root_path . 'api_config.' . $phpEx);
+
 // Start session management
 $user->session_begin();
 $auth->acl($user->data);
@@ -1246,6 +1249,9 @@ if ($keywords || $author || $author_id || $search_id || $submit)
 			);
 			extract($phpbb_dispatcher->trigger_event('core.search_modify_tpl_ary', compact($vars)));
 
+			// to fixed video url for iframe html render
+			$tpl_ary['MESSAGE'] = str_replace('src="/v/', 'src="'.$apiConfig['v_url'].'/v/', $tpl_ary['MESSAGE']);
+			
 			$template->assign_block_vars('searchresults', $tpl_ary);
 
 			if ($show_results == 'topics')
