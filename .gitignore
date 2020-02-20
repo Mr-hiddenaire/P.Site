@@ -1,7 +1,7 @@
-install/*
-store/*
-.idea/*
-cache/*
-api_config.php
-files/*
+/install/*
+/store/*
+/.idea/*
+/cache/*
+/api_config.php
+/files/*
 /config.php
