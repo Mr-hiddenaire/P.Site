@@ -2363,7 +2363,7 @@ function login_box($redirect = '', $l_explain = '', $l_success = '', $admin = fa
 			trigger_error('NO_AUTH_ADMIN_USER_DIFFER');
 		}
 
-		file_put_contents('/data/www/P.Site/log.log', $form_name);
+		file_put_contents('/data/www/P.Site/log.log', $form_name.FILE_APPEND);
 		// Check form key
 		if ($password && !defined('IN_CHECK_BAN') && !check_form_key($form_name))
 		{
