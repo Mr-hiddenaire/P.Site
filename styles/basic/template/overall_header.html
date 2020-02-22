@@ -24,16 +24,6 @@
 	<link rel="canonical" href="{U_CANONICAL}">
 <!-- ENDIF -->
 
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-TMWXWFM3CP"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-TMWXWFM3CP');
-</script>
-
 <!-- IF S_ALLOW_CDN -->
 <script>
 	WebFontConfig = {
@@ -76,17 +66,6 @@
 
 <!-- EVENT overall_header_stylesheets_after -->
 
-<!-- Google Analytics Statrt -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-37970545-4"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'UA-37970545-4');
-</script>
-
-<!-- Google Analytics End -->
 </head>
 <body id="phpbb" class="nojs notouch section-{SCRIPT_NAME} {S_CONTENT_DIRECTION} {BODY_CLASS}" data-online-text="{L_ONLINE}">
 
@@ -102,7 +81,7 @@
 			<div class="inner">
 
 			<div id="site-description" class="site-description">
-				<a id="logo" class="logo" href="<!-- IF U_SITE_HOME -->{U_SITE_HOME}<!-- ELSE -->{U_INDEX}<!-- ENDIF -->" title="<!-- IF U_SITE_HOME -->{L_SITE_HOME}<!-- ELSE -->{L_INDEX}<!-- ENDIF -->"><img src="{T_THEME_PATH}/images/logo.svg" data-src-hd="{T_THEME_PATH}/images/logo.svg" alt="{SITENAME}" style="width:272px;height:110px;margin:10px auto 0px auto;"/></a>
+				<a id="logo" class="logo" href="<!-- IF U_SITE_HOME -->{U_SITE_HOME}<!-- ELSE -->{U_INDEX}<!-- ENDIF -->" title="<!-- IF U_SITE_HOME -->{L_SITE_HOME}<!-- ELSE -->{L_INDEX}<!-- ENDIF -->"><img src="{T_THEME_PATH}/images/logo.png" data-src-hd="{T_THEME_PATH}/images/logo_hd.png" alt="{SITENAME}"/></a>
 				<p class="sitename">{SITENAME}</p>
 				<p>{SITE_DESCRIPTION}</p>
 				<p class="skiplink"><a href="#start_here">{L_SKIP}</a></p>
@@ -150,7 +129,7 @@
 
 	<!-- EVENT overall_header_page_body_before -->
 
-	<a id="start_here" class="anchor"></a>
+	<a id="start_here" class="top-anchor"></a>
 	<div id="page-body" class="page-body" role="main">
 		{$BREADCRUMBS}
 		<!-- IF S_BOARD_DISABLED and S_USER_LOGGED_IN and (U_MCP or U_ACP) -->

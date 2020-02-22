@@ -1429,8 +1429,14 @@ fieldset.fields1 dl.pmlist dd.recipients {
   text-align: right; }
 
 .copyright {
-  padding: 5px;
-  text-align: center; }
+  font-size: 10px;
+  text-align: center;
+  padding: 10px; }
+
+.footer-row {
+  font-size: 10px;
+  line-height: 1.8;
+  margin: 0; }
 
 .small {
   font-size: 0.9em !important; }
@@ -1735,6 +1741,9 @@ ul.linklist:after,
 
 .dropdown-page-jump input.tiny {
   width: 50px; }
+
+.dropdown .clone.hidden {
+  display: none; }
 
 .dropdown .clone.hidden + li.separator {
   display: none; }
@@ -2551,11 +2560,13 @@ blockquote.uncited:before {
     right: 5px; }
 
 blockquote blockquote {
-  margin: 5px; }
+  margin: 1em 1px 1em 15px; }
 
 blockquote cite {
   font-style: normal;
-  font-weight: bold;
+  font-weight: 500;
+  margin: -6px -6px 3px;
+  padding: 4px 6px;
   display: block;
   font-family: "Lucida Grande", "Trebuchet MS", Verdana, Helvetica, Arial, sans-serif;
   font-size: 12px;
@@ -3426,10 +3437,13 @@ ol.def-rules li {
 .pmlist li.bg2 {
   padding: 0 3px; }
 
+/* DEPRECATED 3.2.6
 .pmlist li.pm_message_reported_colour, .pm_message_reported_colour {
-  border-left-color: transparent;
-  border-right-color: transparent; }
-
+	border-left-color: transparent;
+	border-right-color: transparent;
+}
+*/
+.pmlist li.pm_message_reported_colour, .pm_message_reported_colour,
 .pmlist li.pm_marked_colour, .pm_marked_colour,
 .pmlist li.pm_replied_colour, .pm_replied_colour,
 .pmlist li.pm_friend_colour, .pm_friend_colour,
@@ -4343,7 +4357,8 @@ input.button1:focus, input.button2:focus, input.button3:focus {
   ----------------------------------------*/
   .column1, .column2, .left-box.profile-details {
     float: none;
-    width: auto; }
+    width: auto;
+    clear: both; }
 
   /* Polls
   ----------------------------------------*/
