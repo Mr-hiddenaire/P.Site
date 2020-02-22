@@ -4744,7 +4744,7 @@ function page_footer($run_cron = true, $display_template = true, $exit_handler =
 	$template->assign_vars(array(
 		'DEBUG_OUTPUT'			=> phpbb_generate_debug_output($db, $config, $auth, $user, $phpbb_dispatcher),
 		'TRANSLATION_INFO'		=> (!empty($user->lang['TRANSLATION_INFO'])) ? $user->lang['TRANSLATION_INFO'] : '',
-		'CREDIT_LINE'			=> $user->lang('POWERED_BY', '<a href="https://www.phpbb.com/">phpBB</a>&reg; Forum Software &copy; phpBB Limited'),
+	    'CREDIT_LINE'            => $user->lang('POWERED_BY', '<a href="'.$config['site_home_url'].'">DAILYPORNS.COM</a>&reg; Forum Software &copy; DAILYPORNS.COM Limited'),
 
 		'U_ACP' => ($auth->acl_get('a_') && !empty($user->data['is_registered'])) ? append_sid("{$phpbb_admin_path}index.$phpEx", false, true, $user->session_id) : '')
 	);
