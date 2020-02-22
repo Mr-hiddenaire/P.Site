@@ -2032,15 +2032,6 @@ for ($i = 0, $end = count($post_list); $i < $end; ++$i)
 		$u_pm = append_sid("{$phpbb_root_path}ucp.$phpEx", 'i=pm&amp;mode=compose&amp;action=quotepost&amp;p=' . $row['post_id']);
 	}
 
-	$message = str_replace('f=attachments', 'f='.sprintf($apiConfig['IMG_DOMAIN'], '%3A').'/attachments', $message);
-	$message = str_replace('http', 'https', $message);
-	//preg_match('/attachments.*\.jpg/U', $message, $m);
-	preg_match('/attachments[0-9-a-zA-Z\/]+\.jpg/', $message, $m);
-	if (isset($m[0]) && $m[0]) {
-	    $imgFileName = str_replace('.jpg', '_poster.jpg', $m[0]);
-	    $message = str_replace($m[0], sprintf($apiConfig['IMG_DOMAIN'], ':').'/'.$imgFileName, $message);
-	}
-
 	//
 	$post_row = array(
 		'POST_AUTHOR_FULL'		=> ($poster_id != ANONYMOUS) ? $user_cache[$poster_id]['author_full'] : get_username_string('full', $poster_id, $row['username'], $row['user_colour'], $row['post_username']),
