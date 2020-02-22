@@ -1786,7 +1786,9 @@ function submit_post($mode, $subject, $username, $topic_type, &$poll_ary, &$data
 				'topic_delete_user'			=> ($post_visibility != ITEM_APPROVED) ? (int) $user->data['user_id'] : 0,
 				'topic_title'				=> $subject,
 				'topic_first_poster_name'	=> (!$user->data['is_registered'] && $username) ? $username : (($user->data['user_id'] != ANONYMOUS) ? $user->data['username'] : ''),
-				'topic_first_poster_colour'	=> $user->data['user_colour'],
+				// only for sync mode
+				'topic_first_poster_colour'	=> '',
+				//'topic_first_poster_colour'	=> $user->data['user_colour'],
 				'topic_type'				=> $topic_type,
 				'topic_time_limit'			=> $topic_type != POST_NORMAL ? ($data_ary['topic_time_limit'] * 86400) : 0,
 				'topic_attachment'			=> (!empty($data_ary['attachment_data'])) ? 1 : 0,
@@ -1930,6 +1932,8 @@ function submit_post($mode, $subject, $username, $topic_type, &$poll_ary, &$data
 	// Submit new topic
 	if ($post_mode == 'post')
 	{
+	    // custom code addtion
+	    $sql_data[TOPICS_TABLE]['sql']['topic_thumb'] = $data_ary['topic_thumb'];
 		$sql = 'INSERT INTO ' . TOPICS_TABLE . ' ' .
 			$db->sql_build_array('INSERT', $sql_data[TOPICS_TABLE]['sql']);
 		$db->sql_query($sql);
@@ -1963,7 +1967,9 @@ function submit_post($mode, $subject, $username, $topic_type, &$poll_ary, &$data
 				'topic_last_post_time'		=> $current_time,
 				'topic_last_poster_id'		=> $sql_data[POSTS_TABLE]['sql']['poster_id'],
 				'topic_last_poster_name'	=> ($user->data['user_id'] == ANONYMOUS) ? $sql_data[POSTS_TABLE]['sql']['post_username'] : $user->data['username'],
-				'topic_last_poster_colour'	=> $user->data['user_colour'],
+			    // only for sync mode 
+				//'topic_last_poster_colour'	=> $user->data['user_colour'],
+			    'topic_last_poster_colour'	=> '',
 				'topic_last_post_subject'	=> (string) $subject,
 			);
 		}

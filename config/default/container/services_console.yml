@@ -293,3 +293,12 @@ services:
             - '@language'
         tags:
             - { name: console.command }
+            
+    console.command.post.add:
+        class: phpbb\console\command\post\add
+        arguments:
+            - '@user'
+            - '@dbal.conn'
+            - '@language'
+        tags:
+            - { name: console.command }

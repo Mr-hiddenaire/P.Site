@@ -164,6 +164,8 @@ $lang = array_merge($lang, array(
 		1	=> 'Re-cleaning complete. %d username was cleaned.',
 		2	=> 'Re-cleaning complete. %d usernames were cleaned.',
 	],
+    
+    'CLI_SYNC_DATA_FROM_SOURCE_FACTORY' => 'Start syncing datas comes from source factory to community',
 ));
 
 // Additional help for commands.
