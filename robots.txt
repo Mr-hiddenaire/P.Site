@@ -1,2 +1,5 @@
-user-agent: AhrefsBot 
-disallow: /
+User-Agent: AhrefsBot 
+Disallow: /
+
+User-Agent: MJ12bot
+Disallow: /
