@@ -83,7 +83,7 @@ class add extends command
 	            $message = '<iframe width="100%" height="500" src="/v/'.$val['video_url'].'" frameborder="0" allowfullscreen></iframe>';
 	            
 	            if ($val['type'] == self::IS_AISA) {
-	               $title = ''.$val['name'].' - '.$val['tags'];
+	               $title = ''.$val['name'].' - '.$val['unique_id'];
 	            } else {
 	                $title = ''.$val['name'].'';
 	            }
