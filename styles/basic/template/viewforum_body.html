@@ -218,7 +218,7 @@
                             }
                         </style>
 						<!-- thumb start-->
-                        <div class="thumb_img"><a href="{topicrow.U_VIEW_TOPIC}"><img src="{topicrow.TOPIC_THUMB}" /></a></div>
+                        <div class="thumb_img"><a href="{topicrow.U_VIEW_TOPIC}" class="aLink"><img src="{topicrow.TOPIC_THUMB}" /></a></div>
                         <!-- thumb end-->
 						<!-- IF .topicrow.pagination -->
 						<div class="pagination">
@@ -349,6 +349,10 @@ $(function(){
             $(this).parent().find('.thumb_img').css({'left':position.left+'px','top':(position.top+height+5)+'px'}).show();
         });
     }
+    
+    $(".aLink").click(function(){
+    	$(this).parent('.thumb_img').hide();
+    });
 });
 
 function checkPC()
