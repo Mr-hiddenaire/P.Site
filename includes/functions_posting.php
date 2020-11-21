@@ -956,6 +956,7 @@ function topic_review($topic_id, $forum_id, $mode = 'topic_review', $cur_post_id
 {
 	global $user, $auth, $db, $template;
 	global $config, $phpbb_root_path, $phpEx, $phpbb_container, $phpbb_dispatcher;
+	global $apiConfig;
 
 	/* @var $phpbb_content_visibility \phpbb\content_visibility */
 	$phpbb_content_visibility = $phpbb_container->get('content.visibility');
@@ -1163,7 +1164,6 @@ function topic_review($topic_id, $forum_id, $mode = 'topic_review', $cur_post_id
 			}
 		}
 
-		var_dump($apiConfig['v_url']);exit;
 		// By Jim
 		$message = str_replace('src="/v/', 'src="'.$apiConfig['v_url'].'/v/', $message);
 		
