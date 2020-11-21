@@ -1650,9 +1650,10 @@ if (!count($error) && $preview)
 
 	if (!count($error))
 	{
+	    var_dump($preview_message);exit;
 		$template->assign_vars(array(
 			'PREVIEW_SUBJECT'		=> $preview_subject,
-		    'PREVIEW_MESSAGE'		=> str_replace('src="/v/', 'src="'.$apiConfig['v_url'].'/v/', $preview_message),,
+			'PREVIEW_MESSAGE'		=> $preview_message,
 			'PREVIEW_SIGNATURE'		=> $preview_signature,
 
 			'S_DISPLAY_PREVIEW'		=> !empty($preview_message),
