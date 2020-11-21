@@ -347,11 +347,11 @@ $(function(){
     		var height=$(this).height();
             var position=$(this).position();
             
-            $(".thumb_img").each(function(k,v){
-            	$(v).css("display", "none");
-            });
-            
             $(this).parent().find('.thumb_img').css({'left':position.left+'px','top':(position.top+height+5)+'px'}).toggle();
+            
+            $(this).parent().parent().parent().parent().siblings().each(function(k,v){
+            	$(v).find(".thumb_img").hide();
+            });
         });
     }
     
