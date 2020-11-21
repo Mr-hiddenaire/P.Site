@@ -1565,7 +1565,6 @@ if (!count($error) && $preview)
 
 	$preview_message = $message_parser->format_display($post_data['enable_bbcode'], $post_data['enable_urls'], $post_data['enable_smilies'], false);
 
-	var_dump($preview_message);exit;
 	$preview_signature = ($mode == 'edit') ? $post_data['user_sig'] : $user->data['user_sig'];
 	$preview_signature_uid = ($mode == 'edit') ? $post_data['user_sig_bbcode_uid'] : $user->data['user_sig_bbcode_uid'];
 	$preview_signature_bitfield = ($mode == 'edit') ? $post_data['user_sig_bbcode_bitfield'] : $user->data['user_sig_bbcode_bitfield'];
