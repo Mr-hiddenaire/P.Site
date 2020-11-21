@@ -19,7 +19,6 @@ if (!defined('IN_PHPBB'))
 	exit;
 }
 
-var_dump($phpbb_root_path);exit;
 include($phpbb_root_path . 'api_config.' . $phpEx);
 
 /**
