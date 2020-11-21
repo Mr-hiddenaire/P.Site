@@ -342,12 +342,14 @@ $(function(){
         });
     } else {
     	$('.topiclist .list-inner a.topictitle').click(function(e){
+    		e.preventDefault();
+    		
     		var height=$(this).height();
             var position=$(this).position();
+            var img = $(this).parent().find(".thumb_img");
             
-            e.preventDefault();
             $(".thumb_img").each(function(k,v){
-            	if (v != e) {
+            	if (img != v) {
             		$(v).css("display", "none");
             	}
             });
