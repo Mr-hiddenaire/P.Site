@@ -347,18 +347,12 @@ $(function(){
             
             e.preventDefault();
             $(".thumb_img").each(function(k,v){
-            	if (v != this) {
+            	if (v != e) {
             		$(v).css("display", "none");
             	}
             });
             
-            selfVisible = $(this).parent().find('.thumb_img').css("display");
-            
-            if (!selfVisible || selfVisible == 'none') {
-            	$(this).parent().find('.thumb_img').css({'left':position.left+'px','top':(position.top+height+5)+'px'}).css("display", "block");
-            } else {
-            	$(this).parent().find('.thumb_img').css({'left':position.left+'px','top':(position.top+height+5)+'px'}).css("display", "none");
-            }
+            $(this).parent().find('.thumb_img').css({'left':position.left+'px','top':(position.top+height+5)+'px'}).toggle();
         });
     }
     
