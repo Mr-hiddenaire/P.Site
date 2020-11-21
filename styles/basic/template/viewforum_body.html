@@ -347,10 +347,12 @@ $(function(){
             
             e.preventDefault();
             $(".thumb_img").each(function(k,v){
-            	$(v).css("display", "none");
+            	if (v != this) {
+            		$(v).css("display", "none");
+            	}
             });
             
-            $(this).parent().find('.thumb_img').css({'left':position.left+'px','top':(position.top+height+5)+'px'}).show();
+            $(this).parent().find('.thumb_img').css({'left':position.left+'px','top':(position.top+height+5)+'px'}).toggle();
         });
     }
     
