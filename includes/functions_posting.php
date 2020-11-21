@@ -1164,6 +1164,7 @@ function topic_review($topic_id, $forum_id, $mode = 'topic_review', $cur_post_id
 			}
 		}
 
+		var_dump($apiConfig);exit;
 		// By Jim
 		$message = str_replace('src="/v/', 'src="'.$apiConfig['v_url'].'/v/', $message);
 		
