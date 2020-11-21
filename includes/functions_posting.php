@@ -1163,7 +1163,10 @@ function topic_review($topic_id, $forum_id, $mode = 'topic_review', $cur_post_id
 			}
 		}
 
-		var_dump($message);exit;
+		var_dump($apiConfig['v_url']);exit;
+		// By Jim
+		$message = str_replace('src="/v/', 'src="'.$apiConfig['v_url'].'/v/', $message);
+		
 		$post_row = array(
 			'POST_AUTHOR_FULL'		=> get_username_string('full', $poster_id, $row['username'], $row['user_colour'], $row['post_username']),
 			'POST_AUTHOR_COLOUR'	=> get_username_string('colour', $poster_id, $row['username'], $row['user_colour'], $row['post_username']),
