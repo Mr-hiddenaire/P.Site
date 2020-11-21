@@ -346,12 +346,9 @@ $(function(){
     		
     		var height=$(this).height();
             var position=$(this).position();
-            var img = $(this).parent().find(".thumb_img");
             
             $(".thumb_img").each(function(k,v){
-            	if (img != v) {
-            		$(v).css("display", "none");
-            	}
+            	$(v).css("display", "none");
             });
             
             $(this).parent().find('.thumb_img').css({'left':position.left+'px','top':(position.top+height+5)+'px'}).toggle();
