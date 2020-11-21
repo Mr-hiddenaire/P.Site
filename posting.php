@@ -2032,7 +2032,6 @@ make_jumpbox(append_sid("{$phpbb_root_path}viewforum.$phpEx"));
 // Topic review
 if ($mode == 'reply' || $mode == 'quote')
 {
-    var_dump($preview_message);exit;
 	if (topic_review($topic_id, $forum_id))
 	{
 		$template->assign_var('S_DISPLAY_REVIEW', true);

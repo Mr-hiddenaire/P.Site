@@ -1163,6 +1163,7 @@ function topic_review($topic_id, $forum_id, $mode = 'topic_review', $cur_post_id
 			}
 		}
 
+		var_dump($message);exit;
 		$post_row = array(
 			'POST_AUTHOR_FULL'		=> get_username_string('full', $poster_id, $row['username'], $row['user_colour'], $row['post_username']),
 			'POST_AUTHOR_COLOUR'	=> get_username_string('colour', $poster_id, $row['username'], $row['user_colour'], $row['post_username']),
